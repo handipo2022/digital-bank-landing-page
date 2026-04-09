@@ -1,101 +1,618 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Digitalbank landing page</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 0.6875rem; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <title>Frontend Mentor | Digitalbank landing page</title>
 
-  Home
-  About
-  Contact
-  Blog
-  Careers
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      @font-face {
+        font-family: Public_Sans-Light;
+        src: url(./Public_Sans/static/PublicSans-Light.ttf);
+      }
+      @font-face {
+        font-family: Public_Sans-Medium;
+        src: url(./Public_Sans/static/PublicSans-Medium.ttf);
+      }
+      @font-face {
+        font-family: Public_Sans-Bold;
+        src: url(./Public_Sans/static/PublicSans-Bold.ttf);
+      }
+      @font-face {
+        font-family: Public_Sans-Italic;
+        src: url(./Public_Sans/static/PublicSans-Italic.ttf);
+      }
+      @font-face {
+        font-family: Public_Sans-Black;
+        src: url(./Public_Sans/static/PublicSans-Black.ttf);
+      }
+      @font-face {
+        font-family: Public_Sans-ExtraLight;
+        src: url(./Public_Sans/static/PublicSans-ExtraLight.ttf);
+      }
 
-  Request Invite
+      * {
+        box-sizing: border-box;
+      }
+      .main-container {
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+        z-index: 0;
+        width: 100%;
+      }
 
+      .logo-div {
+        background-color: hsl(0, 100%, 100%);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        height: fit-content;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        padding: 4vw;
+      }
+      .logo-digital-bank {
+        height: auto;
+        width: 40vw;
+        margin-left: 2vw;
+      }
+      .icon-hamburger {
+        height: auto;
+        cursor: pointer;
+        width: 6vw;
+        margin-right: 3vw;
+      }
+      .expand-menu-hamburger {
+        display: flex;
+        flex-direction: column;
+        height: 170vw;
+        position: fixed;
+        top: 10.5vw;
+        left: 2.4vw;
+        width: 95vw;
+        align-items: center;
+        z-index: 8;
+        background-image: linear-gradient(
+          to bottom,
+          hsla(233, 26%, 24%, 0.9),
+          hsla(0, 100%, 100%, 0.2)
+        );
+        background-size: cover;
+        background-position: center;
+      }
+      .nav-hamburger {
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        border-radius: 2vw;
+        margin-top: 10vw;
+        width: 90%;
+        z-index: 9;
+        align-items: center;
+      }
+      .nav-hamburger li {
+        list-style-type: none;
+        font-family: Public_Sans-Bold;
+        color: hsla(233, 26%, 24%, 0.7);
+        font-size: 6vw;
+        margin-top: 6vw;
+        margin-bottom: 6vw;
+        margin-left: -8vw;
+        cursor: pointer;
+      }
+      .mockup-div {
+        display: flex;
+        flex-direction: column;
+        background-image: url("images/bg-intro-mobile.svg");
+        background-position: center;
+        background-repeat: no-repeat;
+        height: auto;
+        align-items: center;
+        background-size: 110vw;
+        width: 100%;
+      }
+      .icon-mockup {
+        height: auto;
+        width: 75vw;
+        z-index: 6;
+      }
+      .text-mockup-div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        width: 100;
+      }
+      .text-mockup-div h2 {
+        font-family: Public_Sans-ExtraLight;
+        color: hsl(233, 26%, 24%);
+        text-align: center;
+        height: auto;
+        font-size: 9vw;
+        width: 80vw;
+        margin-top: 1.5vw;
+        margin-bottom: 2vw;
+      }
+      .text-mockup-div p {
+        font-family: Public_Sans-Bold;
+        color: hsla(233, 8%, 62%, 0.7);
+        text-align: center;
+        font-size: 3.1vw;
+        width: 78vw;
+        margin-top: 3vw;
+        margin-bottom: 4vw;
+      }
+      .text-mockup-div button {
+        font-family: Public_Sans-Bold;
+        color: white;
+        background-image: linear-gradient(
+          to bottom,
+          hsl(136, 64%, 51%),
+          hsl(192, 69%, 51%)
+        );
+        border: solid 1px hsl(136, 64%, 51%);
+        font-size: 3.1vw;
+        width: 35vw;
+        height: 11vw;
+        border-radius: 7vw;
+        margin-top: 2vw;
+        margin-bottom: 10vw;
+      }
+      .content-div {
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+        width: 100%;
+        background-color: hsl(0, 0%, 98%);
+      }
+      .content-detail1-div {
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+        width: 100%;
+        align-items: center;
+        text-align: center;
+      }
+      .content-detail1-div h2 {
+        font-family: Public_Sans-ExtraLight;
+        color: hsl(233, 26%, 24%);
+        width: 78vw;
+        font-size: 7.6vw;
+        margin-top: 10vw;
+        margin-bottom: 2vw;
+      }
+      .content-detail1-div p {
+        font-family: Public_Sans-Bold;
+        color: hsla(233, 8%, 62%, 0.7);
+        font-size: 3.1vw;
+        width: 78vw;
+        margin-top: 2vw;
+        margin-bottom: 4vw;
+      }
 
+      .content-detail2-div,
+      .content-subdetail2-div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .content-subdetail2-div img {
+        height: auto;
+        width: 20vw;
+        margin-top: 8vw;
+      }
+      .content-subdetail2-div h3 {
+        font-family: Public_Sans-ExtraLight;
+        color: hsl(233, 26%, 24%);
+        font-size: 5vw;
+        margin-top: 8vw;
+        margin-bottom: 2vw;
+      }
+      .content-subdetail2-div p {
+        font-family: Public_Sans-Bold;
+        color: hsla(233, 8%, 62%, 0.7);
+        text-align: center;
+        font-size: 3.1vw;
+        width: 78vw;
+        margin-top: 2vw;
+        margin-bottom: 4vw;
+      }
+      .content-detail2-div .content-subdetail2-div:last-child p {
+        margin-bottom: 10vw;
+      }
+      .article-main-div {
+        display: flex;
+        flex-direction: column;
+        background-color: hsla(0, 0%, 98%, 0.2);
+        width: 100%;
+        height: fit-content;
+        align-items: center;
+      }
+      .article-main-div h2 {
+        font-family: Public_Sans-ExtraLight;
+        color: hsl(233, 26%, 24%);
+        text-align: center;
+        font-size: 7.5vw;
+        margin-top: 10vw;
+        margin-bottom: 8vw;
+      }
+      .article-submain-div {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+      }
+      .each-article-div {
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+        background-color: white;
+        width: 78vw;
+        margin-left: 8vw;
+      }
+      .each-article-div img {
+        width: 100%;
+        height: 50vw;
+        border-top-left-radius: 2vw;
+        border-top-right-radius: 2vw;
+      }
+      .article-author {
+        font-family: Public_Sans-Bold;
+        color: hsla(233, 8%, 62%, 0.7);
+        width: fit-content;
+        font-size: 2.5vw;
+        margin-top: 5vw;
+        margin-left: 8vw;
+      }
+      .article-title {
+        font-family: Public_Sans-Medium;
+        color: hsl(233, 26%, 24%);
+        font-size: 3.8vw;
+        width: 58vw;
+        margin-top: 2vw;
+        margin-left: 8vw;
+        margin-right: 0vw;
+      }
+      .article-content {
+        font-family: Public_Sans-Bold;
+        color: hsla(233, 8%, 62%, 0.7);
+        font-size: 3vw;
+        width: 58vw;
+        margin-top: 0vw;
+        margin-left: 8vw;
+        margin-right: 0vw;
+        margin-bottom: 8vw;
+      }
+      .bottom-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: fit-content;
+        background-color: hsl(233, 26%, 24%);
+      }
+      .bottom-nav-1st-line {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 15vw;
+      }
+      .bottom-nav-1st-line img {
+        margin-left: 0;
+        margin-bottom: 5vw;
+      }
+      .icon-sosmed {
+        width: 100%;
+        height: fit-content;
+        margin-top: 3vw;
+      }
+      .icon-sosmed img {
+        height: fit-content;
+        margin-left: 1vw;
+        margin-right: 1vw;
+        width: 6vw;
+      }
+      .bottom-nav-2nd-line,
+      .bottom-nav-3rd-line {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 1vw;
+      }
+      .bottom-nav-2nd-line label,
+      .bottom-nav-3rd-line label {
+        font-family: Public_Sans-Bold;
+        color: hsla(0, 0%, 98%, 0.6);
+        margin-top: 4vw;
+        font-size: 3.1vw;
+      }
 
-  Next generation digital banking
+      .bottom-nav-4th-line {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 5vw;
+      }
+      .bottom-nav .bottom-nav-4th-line label:last-child {
+        margin-bottom: 20vw;
+      }
+      .bottom-nav-4th-line button {
+        font-family: Public_Sans-Bold;
+        color: white;
+        background-image: linear-gradient(
+          to bottom,
+          hsl(136, 64%, 51%),
+          hsl(192, 69%, 51%)
+        );
+        font-size: 3.1vw;
+        width: 35vw;
+        height: 11vw;
+        border-radius: 7vw;
+        margin-top: 2vw;
+        margin-bottom: 5vw;
+        border: solid 1px hsl(136, 64%, 51%);
+      }
+      .bottom-nav-4th-line label {
+        font-family: Public_Sans-Bold;
+        color: hsla(233, 8%, 62%, 0.7);
+        font-size: 3.1vw;
+      }
+      .attribution {
+        font-family: Public_Sans-Bold;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 3vw;
+        margin-top: 3vw;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+      @media (max-width: 375px) {
+      }
+      @media (min-width: 375px) and (max-width: 480px) {
+      }
+      @media (min-width: 480px) and (max-width: 768px) {
+      }
+      @media (min-width: 768px) and (max-width: 900px) {
+      }
+      @media (min-width: 900px) and (max-width: 1024px) {
+      }
+      @media (min-width: 1024px) and (max-width: 1280px) {
+      }
+      @media (min-width: 1280px) {
+      }
+    </style>
+  </head>
+  <body>
+    <!-- main div -->
+    <div class="main-container">
+      <!-- logo and hamburger menu -->
+      <div class="logo-div">
+        <img
+          class="logo-digital-bank"
+          src="../digitalbank-landing-page-master/images/logo-dark.svg"
+        />
+        <img
+          id="icon-hamburger"
+          class="icon-hamburger"
+          src="../digitalbank-landing-page-master/images/icon-hamburger.svg"
+          onclick="handlerMenu()"
+        />
+      </div>
+      <div id="expand-menu-hamburger" class="expand-menu-hamburger">
+        <div class="nav-hamburger">
+          <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact</li>
+            <li>Blog</li>
+            <li>Careers</li>
+          </ul>
+        </div>
+      </div>
 
-  Take your financial life online. Your Digitalbank account will be a one-stop-shop 
-  for spending, saving, budgeting, investing, and much more.
+      <!-- mockup -->
+      <div class="mockup-div">
+        <img
+          class="icon-mockup"
+          src="../digitalbank-landing-page-master/images/image-mockups.png"
+        />
+      </div>
 
-  Request Invite
+      <div class="text-mockup-div">
+        <h2>Next generation digital banking</h2>
+        <p>
+          Take your financial life online. Your Digitalbank account will be a
+          one-stop-shop for spending, saving, budgeting, investing, and much
+          more.
+        </p>
 
+        <button onclick="handler()">Request Invite</button>
+      </div>
 
+      <!-- content  -->
+      <div class="content-div">
+        <div class="content-detail1-div">
+          <h2>Why choose Digitalbank?</h2>
+          <p>
+            We leverage Open Banking to turn your bank account into your
+            financial hub. Control your finances like never before.
+          </p>
+        </div>
+        <div class="content-detail2-div">
+          <div class="content-subdetail2-div">
+            <img src="./images/icon-online.svg" />
+            <h3>Online Banking</h3>
+            <p>
+              Our modern web and mobile applications allow you to keep track of
+              your finances wherever you are in the world.
+            </p>
+          </div>
+          <div class="content-subdetail2-div">
+            <img src="./images/icon-budgeting.svg" />
+            <h3>Simple Budgeting</h3>
+            <p>
+              See exactly where your money goes each month. Receive
+              notifications when you’re close to hitting your limits.
+            </p>
+          </div>
+          <div class="content-subdetail2-div">
+            <img src="./images/icon-onboarding.svg" />
+            <h3>Fast Onboarding</h3>
+            <p>
+              We don’t do branches. Open your account in minutes online and
+              start taking control of your finances right away.
+            </p>
+          </div>
+          <div class="content-subdetail2-div">
+            <img src="./images/icon-api.svg" />
+            <h3>Open API</h3>
+            <p>
+              Manage your savings, investments, pension, and much more from one
+              account. Tracking your money has never been easier.
+            </p>
+          </div>
+        </div>
+      </div>
 
-  Why choose Digitalbank?
+      <!-- article -->
 
-  We leverage Open Banking to turn your bank account into your financial hub. Control 
-  your finances like never before.
+      <div class="article-main-div">
+        <h2>Latest Articles</h2>
+        <div class="article-submain-div">
+          <div class="each-article-div">
+            <img
+              src="../digitalbank-landing-page-master/images/image-currency.jpg"
+            />
+            <p class="article-author">By Claire Robinson</p>
+            <p class="article-title">
+              Receive money in any currency with no fees
+            </p>
+            <p class="article-content">
+              The world is getting smaller and we’re becoming more mobile. So
+              why should you be forced to only receive money in a single …
+            </p>
+          </div>
+          <div class="each-article-div">
+            <img
+              src="../digitalbank-landing-page-master/images/image-restaurant.jpg"
+            />
+            <p class="article-author">By Wilson Hutton</p>
+            <p class="article-title">
+              Treat yourself without worrying about money
+            </p>
+            <p class="article-content">
+              Our simple budgeting feature allows you to separate out your
+              spending and set realistic limits each month. That means you …
+            </p>
+          </div>
+          <div class="each-article-div">
+            <img
+              src="../digitalbank-landing-page-master/images/image-plane.jpg"
+            />
+            <p class="article-author">By Wilson Hutton</p>
+            <p class="article-title">
+              Take your Digitalbank card wherever you go
+            </p>
+            <p class="article-content">
+              We want you to enjoy your travels. This is why we don’t charge any
+              fees on purchases while you’re abroad. We’ll even show you …
+            </p>
+          </div>
+          <div class="each-article-div">
+            <img
+              src="../digitalbank-landing-page-master/images/image-confetti.jpg"
+            />
+            <p class="article-author">By Claire Robinson</p>
+            <p class="article-title">
+              Our invite-only Beta accounts are now live!
+            </p>
+            <p class="article-content">
+              After a lot of hard work by the whole team, we’re excited to
+              launch our closed beta. It’s easy to request an invite through the
+              site ...
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- bottom navigation -->
+      <div class="bottom-nav">
+        <div class="bottom-nav-1st-line">
+          <img
+            class="logo-digital-bank"
+            src="../digitalbank-landing-page-master/images/logo-light.svg"
+          />
+          <div class="icon-sosmed">
+            <img
+              src="../digitalbank-landing-page-master/images/icon-facebook.svg"
+            />
+            <img
+              src="../digitalbank-landing-page-master/images/icon-youtube.svg"
+            />
+            <img
+              src="../digitalbank-landing-page-master/images/icon-twitter.svg"
+            />
+            <img
+              src="../digitalbank-landing-page-master/images/icon-pinterest.svg"
+            />
+            <img
+              src="../digitalbank-landing-page-master/images/icon-instagram.svg"
+            />
+          </div>
+        </div>
+        <div class="bottom-nav-2nd-line">
+          <label>About Us</label>
+          <label>Contact</label>
+          <label>Blog</label>
+        </div>
+        <div class="bottom-nav-3rd-line">
+          <label>Careers</label>
+          <label>Support</label>
+          <label>Privacy Policy</label>
+        </div>
+        <div class="bottom-nav-4th-line">
+          <button>Request Invite</button>
+          <label>© Digitalbank. All Rights Reserved</label>
+        </div>
+      </div>
+    </div>
 
-  Online Banking
-  Our modern web and mobile applications allow you to keep track of your finances 
-  wherever you are in the world.
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a href="#">ZHB copyright @April-2026</a>.
+    </div>
+  </body>
+  <script>
+    var toggle = false;
+    function handlerMenu() {
+      if (toggle) {
+        document.getElementById("expand-menu-hamburger").style.display = "flex";
 
-  Simple Budgeting
-  See exactly where your money goes each month. Receive notifications when you’re 
-  close to hitting your limits.
+        document.getElementById("icon-hamburger").src =
+          "../digitalbank-landing-page-master/images/icon-close.svg";
 
-  Fast Onboarding
-  We don’t do branches. Open your account in minutes online and start taking control 
-  of your finances right away.
-
-  Open API
-  Manage your savings, investments, pension, and much more from one account. Tracking 
-  your money has never been easier.
-
-  
-
-  Latest Articles
-
-  By Claire Robinson
-  Receive money in any currency with no fees
-  The world is getting smaller and we’re becoming more mobile. So why should you be 
-  forced to only receive money in a single …
-
-  By Wilson Hutton
-  Treat yourself without worrying about money
-  Our simple budgeting feature allows you to separate out your spending and set 
-  realistic limits each month. That means you …
-
-  By Wilson Hutton
-  Take your Digitalbank card wherever you go
-  We want you to enjoy your travels. This is why we don’t charge any fees on purchases 
-  while you’re abroad. We’ll even show you …
-
-  By Claire Robinson
-  Our invite-only Beta accounts are now live!
-  After a lot of hard work by the whole team, we’re excited to launch our closed beta. 
-  It’s easy to request an invite through the site ...
-
-  
-
-  About Us
-  Contact
-  Blog
-  Careers
-  Support
-  Privacy Policy
-
-  Request Invite
-
-  © Digitalbank. All Rights Reserved
-  
-  <footer class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </footer>
-</body>
+        toggle = false;
+      } else {
+        document.getElementById("expand-menu-hamburger").style.display = "none";
+        document.getElementById("icon-hamburger").src =
+          "../digitalbank-landing-page-master/images/icon-hamburger.svg";
+        toggle = true;
+      }
+    }
+  </script>
 </html>
