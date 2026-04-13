@@ -65,6 +65,9 @@
         z-index: 10;
         padding: 4vw;
       }
+      .logo-div button {
+        display: none;
+      }
       .logo-digital-bank {
         height: auto;
         width: 40vw;
@@ -77,7 +80,7 @@
         margin-right: 3vw;
       }
       .expand-menu-hamburger {
-        display: flex;
+        display: none;
         flex-direction: column;
         height: 170vw;
         position: fixed;
@@ -95,7 +98,7 @@
         background-position: center;
       }
       .nav-hamburger {
-        display: flex;
+        display: none;
         flex-direction: column;
         background-color: white;
         border-radius: 2vw;
@@ -114,6 +117,21 @@
         margin-left: -8vw;
         cursor: pointer;
       }
+      .nav-menu-horizontal {
+        display: none;
+        flex-direction: row;
+        justify-content: space-around;
+        background-color: white;
+        height: fit-content;
+        align-items: center;
+        width: 100%;
+      }
+      .nav-menu-horizontal label {
+        font-family: Public_Sans-Bold;
+        color: hsla(233, 26%, 24%, 0.7);
+        cursor: pointer;
+      }
+
       .mockup-div {
         display: flex;
         flex-direction: column;
@@ -156,7 +174,7 @@
         margin-top: 3vw;
         margin-bottom: 4vw;
       }
-      .text-mockup-div button {
+      button {
         font-family: Public_Sans-Bold;
         color: white;
         background-image: linear-gradient(
@@ -164,13 +182,17 @@
           hsl(136, 64%, 51%),
           hsl(192, 69%, 51%)
         );
-        border: solid 1px hsl(136, 64%, 51%);
         font-size: 3.1vw;
         width: 35vw;
         height: 11vw;
         border-radius: 7vw;
         margin-top: 2vw;
-        margin-bottom: 10vw;
+        margin-bottom: 5vw;
+        border: solid 1px hsl(136, 64%, 51%);
+        cursor: pointer;
+      }
+      .text-mockup-div button {
+        display: block;
       }
       .content-div {
         display: flex;
@@ -346,25 +368,13 @@
         align-items: center;
         margin-top: 5vw;
       }
+      .bottom-nav-4th-line button {
+        display: block;
+      }
       .bottom-nav .bottom-nav-4th-line label:last-child {
         margin-bottom: 20vw;
       }
-      .bottom-nav-4th-line button {
-        font-family: Public_Sans-Bold;
-        color: white;
-        background-image: linear-gradient(
-          to bottom,
-          hsl(136, 64%, 51%),
-          hsl(192, 69%, 51%)
-        );
-        font-size: 3.1vw;
-        width: 35vw;
-        height: 11vw;
-        border-radius: 7vw;
-        margin-top: 2vw;
-        margin-bottom: 5vw;
-        border: solid 1px hsl(136, 64%, 51%);
-      }
+
       .bottom-nav-4th-line label {
         font-family: Public_Sans-Bold;
         color: hsla(233, 8%, 62%, 0.7);
@@ -381,19 +391,291 @@
       .attribution a {
         color: hsl(228, 45%, 44%);
       }
-      @media (max-width: 375px) {
-      }
-      @media (min-width: 375px) and (max-width: 480px) {
-      }
-      @media (min-width: 480px) and (max-width: 768px) {
-      }
-      @media (min-width: 768px) and (max-width: 900px) {
-      }
-      @media (min-width: 900px) and (max-width: 1024px) {
-      }
-      @media (min-width: 1024px) and (max-width: 1280px) {
-      }
-      @media (min-width: 1280px) {
+
+      @media (min-width: 900px) and (max-width: 1440px) {
+        .logo-div {
+          justify-content: space-evenly;
+          width: 100%;
+          height: fit-content;
+          padding: 1vw;
+        }
+        .logo-div button {
+          display: block;
+          font-size: 1vw;
+          width: 10vw;
+          height: 3vw;
+          margin: 0;
+          text-align: center;
+        }
+        .logo-digital-bank {
+          width: 12vw;
+          height: 3vw;
+          margin-left: 2vw;
+        }
+        .icon-hamburger {
+          display: none;
+        }
+
+        .expand-menu-hamburger {
+          display: none;
+        }
+        .nav-hamburger {
+          display: none;
+        }
+
+        .nav-menu-horizontal {
+          display: flex;
+          width: 30vw;
+        }
+        .nav-menu-horizontal label {
+          font-size: 1vw;
+          margin: 1vw 1vw;
+        }
+        .mockup-container {
+          display: flex;
+          flex-direction: row-reverse;
+          width: 100%;
+          height: fit-content;
+        }
+        .mockup-div {
+          background-image: url("images/bg-intro-desktop.svg");
+          background-size: 140%;
+          background-position: 0vw -2vw;
+          width: 50%;
+          height: 50vw;
+        }
+        .icon-mockup {
+          width: 45vw;
+          margin-top: -0.2vw;
+          margin-left: 4vw;
+        }
+        .text-mockup-div {
+          width: 34%;
+          height: fit-content;
+          align-items: start;
+          margin-top: 14vw;
+        }
+        .text-mockup-div h2 {
+          width: 28vw;
+          height: fit-content;
+          font-size: 3.5vw;
+          text-align: start;
+          margin-bottom: 1vw;
+        }
+        .text-mockup-div p {
+          font-size: 1vw;
+          width: 26vw;
+          height: fit-content;
+          text-align: start;
+          margin-top: 1vw;
+          margin-bottom: 1vw;
+        }
+        .text-mockup-div button {
+          font-size: 1vw;
+          width: 11vw;
+          height: 3.4vw;
+          margin-top: 1vw;
+          text-align: center;
+        }
+
+        .content-div {
+          display: flex;
+          flex-direction: column;
+          height: fit-content;
+          width: 100%;
+          background-color: hsl(0, 0%, 98%);
+        }
+        .content-detail1-div {
+          display: flex;
+          flex-direction: column;
+          height: fit-content;
+          width: 100%;
+          align-items: start;
+          text-align: center;
+        }
+        .content-detail1-div h2 {
+          font-family: Public_Sans-ExtraLight;
+          color: hsl(233, 26%, 24%);
+          width: 60vw;
+          font-size: 3vw;
+          margin-top: 4vw;
+          margin-bottom: 1vw;
+          margin-left: 3vw;
+        }
+        .content-detail1-div p {
+          font-family: Public_Sans-Bold;
+          color: hsla(233, 8%, 62%, 0.7);
+          font-size: 1vw;
+          width: 38vw;
+          margin-top: 1vw;
+          margin-bottom: 1vw;
+          text-align: start;
+          margin-left: 16vw;
+        }
+
+        .content-detail2-div {
+          flex-direction: row;
+          margin-top: 2vw;
+          margin-left: 16vw;
+          align-items: start;
+          height: 23vw;
+        }
+        .content-subdetail2-div {
+          display: column;
+          align-items: center;
+          text-align: center;
+          align-items: start;
+          margin-top: 0vw;
+          margin-right: 4vw;
+        }
+        .content-subdetail2-div img {
+          height: auto;
+          width: 5vw;
+          margin-top: 0vw;
+        }
+        .content-subdetail2-div h3 {
+          font-family: Public_Sans-ExtraLight;
+          color: hsl(233, 26%, 24%);
+          font-size: 2vw;
+          margin-top: 2vw;
+          margin-bottom: 2vw;
+        }
+        .content-subdetail2-div p {
+          font-family: Public_Sans-Bold;
+          color: hsla(233, 8%, 62%, 0.7);
+          text-align: start;
+          font-size: 1vw;
+          width: 15vw;
+          margin-top: 2vw;
+          margin-bottom: 2vw;
+        }
+        .content-detail2-div .content-subdetail2-div:last-child p {
+          margin-bottom: 1vw;
+        }
+        .article-main-div {
+          align-items: start;
+        }
+        .article-main-div h2 {
+          font-size: 3vw;
+          margin-top: 3vw;
+          margin-bottom: 3vw;
+          margin-left: 16vw;
+        }
+        .article-submain-div {
+          flex-direction: row;
+          width: 80%;
+          margin-left: 15vw;
+        }
+        .each-article-div {
+          height: 25vw;
+          width: 15vw;
+          margin-left: 1vw;
+          justify-content: space-around;
+          margin-right: 3.3vw;
+        }
+        .each-article-div img {
+          width: 100%;
+          height: 10vw;
+          border-top-left-radius: 1vw;
+          border-top-right-radius: 1vw;
+        }
+        .article-author {
+          width: fit-content;
+          font-size: 0.6vw;
+          margin-top: 2vw;
+          margin-left: 1vw;
+        }
+        .article-title {
+          font-size: 1vw;
+          width: 12vw;
+          margin-top: 1vw;
+          margin-left: 1vw;
+        }
+        .article-content {
+          font-size: 0.8vw;
+          width: 12.5vw;
+          margin-top: 0vw;
+          margin-left: 1vw;
+          margin-bottom: 3vw;
+        }
+
+        .bottom-nav {
+          flex-direction: row;
+          align-items: start;
+        }
+        .bottom-nav-1st-line {
+          margin-top: 0vw;
+          margin-right: 9vw;
+          margin-left: 16vw;
+        }
+        .bottom-nav-1st-line img {
+          margin-left: 0;
+          margin-bottom: 1vw;
+          margin-top: 2vw;
+          width: 10vw;
+        }
+        .icon-sosmed {
+          flex-direction: row;
+          margin-top: 1vw;
+        }
+        .icon-sosmed img {
+          margin-left: 0.1vw;
+          margin-right: 0.1vw;
+          width: 1.5vw;
+        }
+
+        .bottom-nav-2nd-line,
+        .bottom-nav-3rd-line {
+          margin-top: 0vw;
+          align-items: start;
+          width: fit-content;
+
+          margin-right: 2vw;
+        }
+
+        .bottom-nav-2nd-line label,
+        .bottom-nav-3rd-line label {
+          font-size: 1vw;
+          margin-top: 0vw;
+          margin-bottom: 2.2vw;
+          margin-right: 5vw;
+        }
+
+        .bottom-nav-2nd-line label:first-child {
+          margin-top: 2.7vw;
+        }
+        .bottom-nav-3rd-line label:first-child {
+          margin-top: 2.7vw;
+        }
+        .bottom-nav-4th-line {
+          margin-top: 0vw;
+          margin-left: 10vw;
+          align-items: end;
+        }
+        .bottom-nav-4th-line button {
+          display: block;
+          width: 11vw;
+          border-radius: 1.7vw;
+          height: 3vw;
+          font-size: 1vw;
+          margin-top: 3vw;
+          margin-bottom: 1vw;
+        }
+        .bottom-nav .bottom-nav-4th-line label:last-child {
+          margin-bottom: 4vw;
+          margin-top: 1vw;
+        }
+
+        .bottom-nav-4th-line label {
+          font-size: 1vw;
+        }
+        .attribution {
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          font-size: 2vw;
+          margin-top: 1vw;
+        }
       }
     </style>
   </head>
@@ -406,15 +688,25 @@
           class="logo-digital-bank"
           src="../digitalbank-landing-page-master/images/logo-dark.svg"
         />
+        <div class="nav-menu-horizontal">
+          <label>Home</label>
+          <label>About</label>
+          <label>Contact</label>
+          <label>Blog</label>
+          <label>Careers</label>
+        </div>
+
         <img
           id="icon-hamburger"
           class="icon-hamburger"
+          style="border: solid 1px yellow"
           src="../digitalbank-landing-page-master/images/icon-hamburger.svg"
           onclick="handlerMenu()"
         />
+        <button>Request Invite</button>
       </div>
       <div id="expand-menu-hamburger" class="expand-menu-hamburger">
-        <div class="nav-hamburger">
+        <div id="nav-hamburger" class="nav-hamburger">
           <ul>
             <li>Home</li>
             <li>About</li>
@@ -426,22 +718,26 @@
       </div>
 
       <!-- mockup -->
-      <div class="mockup-div">
-        <img
-          class="icon-mockup"
-          src="../digitalbank-landing-page-master/images/image-mockups.png"
-        />
-      </div>
+      <div class="mockup-container">
+        <div class="mockup-div">
+          <img
+            class="icon-mockup"
+            src="../digitalbank-landing-page-master/images/image-mockups.png"
+          />
+        </div>
 
-      <div class="text-mockup-div">
-        <h2>Next generation digital banking</h2>
-        <p>
-          Take your financial life online. Your Digitalbank account will be a
-          one-stop-shop for spending, saving, budgeting, investing, and much
-          more.
-        </p>
+        <div class="text-mockup-div">
+          <h2>Next generation digital banking</h2>
+          <p>
+            Take your financial life online. Your Digitalbank account will be a
+            one-stop-shop for spending, saving, budgeting, investing, and much
+            more.
+          </p>
 
-        <button onclick="handler()">Request Invite</button>
+          <button class="text-mockup-div button" onclick="handler()">
+            Request Invite
+          </button>
+        </div>
       </div>
 
       <!-- content  -->
@@ -602,6 +898,7 @@
     function handlerMenu() {
       if (toggle) {
         document.getElementById("expand-menu-hamburger").style.display = "flex";
+        document.getElementById("nav-hamburger").style.display = "flex";
 
         document.getElementById("icon-hamburger").src =
           "../digitalbank-landing-page-master/images/icon-close.svg";
@@ -609,6 +906,7 @@
         toggle = false;
       } else {
         document.getElementById("expand-menu-hamburger").style.display = "none";
+        document.getElementById("nav-hamburger").style.display = "none";
         document.getElementById("icon-hamburger").src =
           "../digitalbank-landing-page-master/images/icon-hamburger.svg";
         toggle = true;
