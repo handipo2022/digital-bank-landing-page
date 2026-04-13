@@ -12,7 +12,6 @@ This is a solution to the [Digitalbank landing page challenge on Frontend Mentor
   - [Built with](#built-with)
 - [Author](#author)
 
-
 ## Overview
 
 ### The challenge
@@ -34,12 +33,10 @@ Users should be able to:
 
 ![screen 1440](./sshot/sshot_1440.jpeg)
 
-
-
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [solution url for Digital bank landing page challenge](https://github.com/handipo2022/digital-bank-landing-page)
+- Live Site URL: [live url Digital bank landing page](https://handipo2022.github.io/digital-bank-landing-page/)
 
 ## My process
 
@@ -50,8 +47,6 @@ Users should be able to:
 - Flexbox
 - Mobile-first workflow
 
-
 ## Author
 
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-
+- Frontend Mentor - [@zhb](https://www.frontendmentor.io/profile/handipo2022)
