@@ -36,7 +36,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [solution url for Digital bank landing page challenge](https://github.com/handipo2022/digital-bank-landing-page)
-- Live Site URL: [live url Digital bank landing page](https://handipo2022.github.io/digital-bank-landing-page/)
+- Live Site URL: [live url Digital bank landing page](https://digital-bank-landing-pages.netlify.app/)
 
 ## My process
 
